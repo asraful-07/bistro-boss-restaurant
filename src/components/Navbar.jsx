@@ -31,20 +31,17 @@ const Navbar = () => {
           <NavLink to="/" className={getNavLinkClass}>
             Home
           </NavLink>
-          <NavLink to="/hot-jobs" className={getNavLinkClass}>
-            HotJobs
+          <NavLink to="/contact-us" className={getNavLinkClass}>
+            CONTACT US
           </NavLink>
-          <NavLink to="/my-apply" className={getNavLinkClass}>
-            MyApply
+          <NavLink to="/dashboard" className={getNavLinkClass}>
+            DASHBOARD
           </NavLink>
-          <NavLink to="/add-job" className={getNavLinkClass}>
-            AddJob
+          <NavLink to="/our-menu" className={getNavLinkClass}>
+            Our Menu
           </NavLink>
-          <NavLink to="/myPostedJobs" className={getNavLinkClass}>
-            MyPostedJobs
-          </NavLink>
-          <NavLink to="/contact" className={getNavLinkClass}>
-            Contact
+          <NavLink to="/our-shop" className={getNavLinkClass}>
+            Our Shop
           </NavLink>
           {user ? (
             <div className="flex items-center space-x-4">
@@ -94,36 +91,21 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg p-4">
-          <NavLink to="/about" className={getNavLinkClass} onClick={toggleMenu}>
-            About
+        <div className="md:hidden flex flex-col my-4 bg-white shadow-lg p-4">
+          <NavLink to="/" className={getNavLinkClass}>
+            Home
           </NavLink>
-          <NavLink
-            to="/solutions"
-            className={getNavLinkClass}
-            onClick={toggleMenu}
-          >
-            Solutions
+          <NavLink to="/contact-us" className={getNavLinkClass}>
+            CONTACT us
           </NavLink>
-          <NavLink
-            to="/causes"
-            className={getNavLinkClass}
-            onClick={toggleMenu}
-          >
-            Causes
+          <NavLink to="/dashboard" className={getNavLinkClass}>
+            DASHBOARD
           </NavLink>
-          <NavLink to="/faq" className={getNavLinkClass} onClick={toggleMenu}>
-            FAQ
+          <NavLink to="/our-menu" className={getNavLinkClass}>
+            Our Menu
           </NavLink>
-          <NavLink to="/news" className={getNavLinkClass} onClick={toggleMenu}>
-            News
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className={getNavLinkClass}
-            onClick={toggleMenu}
-          >
-            Contact
+          <NavLink to="/our-shop" className={getNavLinkClass}>
+            Our Shop
           </NavLink>
           {user ? (
             <div className="flex flex-col items-center space-y-4">
