@@ -10,10 +10,10 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>Bistro Boss || Menu Page</title>
+        <title>Bistro Boss || Home Page</title>
         <meta
           name="description"
-          content="This is the menu page of the application."
+          content="This is the Home page of the application."
         />
       </Helmet>
       <Banner />

@@ -40,7 +40,7 @@ const Navbar = () => {
           <NavLink to="/our-menu" className={getNavLinkClass}>
             Our Menu
           </NavLink>
-          <NavLink to="/our-shop" className={getNavLinkClass}>
+          <NavLink to="/our-order" className={getNavLinkClass}>
             Our Shop
           </NavLink>
           {user ? (

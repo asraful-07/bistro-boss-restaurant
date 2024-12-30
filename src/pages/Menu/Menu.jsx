@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Cover from "../Home/Shared/Cover";
-// import bgImg from "../../assets/images/menu/menu-bg.png";
 import pp from "../../assets/images/menu/dessert-bg.jpeg";
 import MenuSection from "../../components/MenuSection";
 
@@ -21,7 +20,6 @@ const Menu = () => {
       <MenuSection />
       <Cover img={pp} />
       <MenuSection />
-      <h1>Menu</h1>
     </div>
   );
 };

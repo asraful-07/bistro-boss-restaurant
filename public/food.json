@@ -1,0 +1,84 @@
+{
+  "data": {
+    "salad": [
+      {
+        "id": 1,
+        "name": "Caesar Salad",
+        "description": "Classic Caesar salad with croutons and parmesan.",
+        "price": 8.99,
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 2,
+        "name": "Greek Salad",
+        "description": "Fresh tomatoes, cucumbers, olives, and feta cheese.",
+        "price": 7.99,
+        "image": "https://via.placeholder.com/150"
+      }
+    ],
+    "pizza": [
+      {
+        "id": 1,
+        "name": "Margherita Pizza",
+        "description": "Tomato, mozzarella, and fresh basil.",
+        "price": 12.99,
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 2,
+        "name": "Pepperoni Pizza",
+        "description": "Loaded with pepperoni and cheese.",
+        "price": 14.99,
+        "image": "https://via.placeholder.com/150"
+      }
+    ],
+    "soups": [
+      {
+        "id": 1,
+        "name": "Tomato Soup",
+        "description": "Rich and creamy tomato soup.",
+        "price": 6.99,
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 2,
+        "name": "Chicken Noodle Soup",
+        "description": "Hearty soup with chicken and noodles.",
+        "price": 7.49,
+        "image": "https://via.placeholder.com/150"
+      }
+    ],
+    "desserts": [
+      {
+        "id": 1,
+        "name": "Chocolate Cake",
+        "description": "Decadent chocolate cake with fudge frosting.",
+        "price": 5.99,
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 2,
+        "name": "Cheesecake",
+        "description": "Classic cheesecake with a graham cracker crust.",
+        "price": 6.49,
+        "image": "https://via.placeholder.com/150"
+      }
+    ],
+    "drinks": [
+      {
+        "id": 1,
+        "name": "Lemonade",
+        "description": "Freshly squeezed lemonade.",
+        "price": 3.99,
+        "image": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 2,
+        "name": "Iced Coffee",
+        "description": "Cold brew coffee with a splash of milk.",
+        "price": 4.49,
+        "image": "https://via.placeholder.com/150"
+      }
+    ]
+  }
+}
