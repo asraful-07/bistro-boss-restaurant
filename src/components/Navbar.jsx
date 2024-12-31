@@ -5,7 +5,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, handelLogout } = useContext(AuthContext);
+  const { user, handleLogout } = useContext(AuthContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -59,7 +59,7 @@ const Navbar = () => {
               )}
               <button
                 className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-400"
-                onClick={handelLogout}
+                onClick={handleLogout}
               >
                 Logout
               </button>
