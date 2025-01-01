@@ -6,8 +6,10 @@ import Footer from "../components/Footer";
 
 const MainLayout = () => {
   const location = useLocation();
-  console.log(location);
-  const noHF = location.pathname.includes("login");
+
+  const noHF =
+    location.pathname.includes("login") ||
+    location.pathname.includes("register");
   return (
     <div className="flex flex-col min-h-screen">
       {/* Toast Notifications */}
