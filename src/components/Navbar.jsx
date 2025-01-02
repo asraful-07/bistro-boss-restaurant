@@ -2,10 +2,13 @@ import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { AuthContext } from "../provider/AuthProvider";
+import { MdShoppingCart } from "react-icons/md";
+import useCart from "../hook/useCart";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, handleLogout } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -42,6 +45,12 @@ const Navbar = () => {
           </NavLink>
           <NavLink to="/our-order" className={getNavLinkClass}>
             Our Shop
+          </NavLink>
+          <NavLink to="/" className={getNavLinkClass}>
+            <button className="btn">
+              <MdShoppingCart className="text-xl" />
+              <div className="badge badge-secondary">+{cart.length}</div>
+            </button>
           </NavLink>
           {user ? (
             <div className="flex items-center space-x-4">
