@@ -7,6 +7,7 @@ import Menu from "../pages/Menu/Menu";
 import Order from "../pages/Order/Order/Order";
 import Dashboard from "../layouts/DashboardLayout";
 import Cart from "../pages/Dashboard/Cart/Cart";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 const routes = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const routes = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "users",
+        element: <AllUsers />,
       },
     ],
   },

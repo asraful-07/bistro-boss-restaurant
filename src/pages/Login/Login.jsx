@@ -4,38 +4,18 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // import Lottie from "lottie-react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
+import useAxiosPublic from "../../hook/useAxiosPublic";
 // import axios from "axios";
 
 const Login = () => {
   const { handleGoogleLogin, handleLogin, user } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from || "/";
-
-  // const handleLoginSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-
-  //   try {
-  //     await handleLogin(email, password);
-
-  //     const user = { email: email };
-  //     const response = await axios.post("http://localhost:5000/jwt", user, {
-  //       withCredentials: true,
-  //     });
-
-  //     // Log the JWT token to the console
-  //     console.log("JWT Token:", response.data.token);
-
-  //     navigate(from, { replace: true });
-  //   } catch (err) {
-  //     setError(err.message);
-  //   }
-  // };
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -52,10 +32,31 @@ const Login = () => {
 
   const handleGoogleLoginClick = async () => {
     try {
-      await handleGoogleLogin();
-      navigate(from, { replace: true });
+      // Call the Google login function and await the result
+      const result = await handleGoogleLogin();
+
+      // Ensure result contains user information
+      if (result?.user) {
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          // photoUrl: result.user?.photoUrl,
+        };
+
+        // Save user information to the database
+        await axiosPublic.post("/users", userInfo);
+
+        // Navigate to the desired route
+        navigate(from, { replace: true });
+      } else {
+        throw new Error(
+          "User information is not available after Google login."
+        );
+      }
     } catch (err) {
+      // Handle errors gracefully
       setError("Google login failed. Please try again.");
+      console.error("Error during Google login:", err);
     }
   };
 

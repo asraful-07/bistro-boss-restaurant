@@ -2,20 +2,25 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
+import useAxiosPublic from "../../hook/useAxiosPublic";
 
 const Register = () => {
+  const axiosPublic = useAxiosPublic();
   const { handleRegister, manageProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   const handelSinUp = (e) => {
     e.preventDefault();
     setError("");
+
+    // Extracting form values
     const name = e.target.name.value;
     const photoUrl = e.target.photoUrl.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const conPassword = e.target.conPassword.value;
 
+    // Validation checks
     if (password.length < 6) {
       setError("Password must contain at least 6 characters");
       return;
@@ -33,10 +38,27 @@ const Register = () => {
       return;
     }
 
+    // Object to save user information
+    const userInfo = {
+      name,
+      email,
+      photoUrl,
+    };
+
+    // Registration logic
     handleRegister(email, password)
       .then((res) => {
-        manageProfile(name, photoUrl);
-        toast.success("Registration successful");
+        manageProfile(name, photoUrl); // Update profile details
+
+        // Save user information to the database
+        axiosPublic
+          .post("/users", userInfo)
+          .then(() => {
+            toast.success("Registration successful");
+          })
+          .catch((apiErr) => {
+            setError("Error saving user info: " + apiErr.message);
+          });
       })
       .catch((err) => {
         setError("Registration failed: " + err.message);
