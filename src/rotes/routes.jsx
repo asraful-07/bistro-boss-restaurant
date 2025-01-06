@@ -8,6 +8,7 @@ import Order from "../pages/Order/Order/Order";
 import Dashboard from "../layouts/DashboardLayout";
 import Cart from "../pages/Dashboard/Cart/Cart";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import AddItems from "../pages/Dashboard/AddItems/AddItems";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "addItems",
+        element: <AddItems />,
       },
       {
         path: "users",
