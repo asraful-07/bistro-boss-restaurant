@@ -11,6 +11,7 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddItems from "../pages/Dashboard/AddItems/AddItems";
 import ManageItems from "../pages/Dashboard/ManageItems/ManageItems";
 import UpdateItem from "../pages/Dashboard/UpdateItem/UpdateItem";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 const routes = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const routes = createBrowserRouter([
       {
         path: "users",
         element: <AllUsers />,
+      },
+      {
+        path: "payment",
+        element: <Payment />,
       },
     ],
   },
